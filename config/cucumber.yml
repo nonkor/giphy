@@ -1,1 +1,1 @@
-default: -f pretty -f html --out=report.html
+default: -f pretty -f html --out=report.html -t 'not @pending'
