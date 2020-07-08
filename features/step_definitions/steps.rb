@@ -47,7 +47,7 @@ end
 When('only {string} gifs should be listed') do |channel|
   channel_id = DataHelper.channels.key(channel)
   expect(@page).to have_gifs
-  expect(@page).to have_selected_channel(channel_id)
+  expect(@page.selected_channel).to eq channel_id
 end
 
 Then('{string} should be specified as keyword') do |keyword|

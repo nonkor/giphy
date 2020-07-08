@@ -1,0 +1,21 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@0.1.2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-browsers
+    executor: ruby/default
+    steps:
+      - checkout
+      - run:
+          name: bundler install
+          command: gem install bundler
+      - ruby/bundle-install
+      - run:
+          name: cucumber run
+          command: bundle exec cucumber
+      - store_artifacts:
+          path: results
+          prefix: tests

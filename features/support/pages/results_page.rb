@@ -13,8 +13,8 @@ class ResultsPage < Page
     gifs_imgs.count > 0
   end
 
-  def has_selected_channel?(channel_id)
-    searchbar == channel_id
+  def selected_channel
+    searchbar
   end
 
   def results_count
