@@ -6,7 +6,7 @@ class Page
   text_field :keyword, class: 'Input-sc-w75cdz'
 
   def initialize
-    super($browser)
+    super(Base.browser)
   end
 
   def body

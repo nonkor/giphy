@@ -3,7 +3,8 @@ require 'watir'
 require 'watirsome'
 require 'rspec'
 
+require_rel 'base.rb'
 require_rel 'pages/page.rb'
 
-$browser = Watir::Browser.new
-
+Base.browser = Watir::Browser.new
+Base.wipe_report_dir

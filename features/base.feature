@@ -18,7 +18,7 @@ Feature: Observing available gifs
     And I should see related channels
     And the data should be sorted by "relevant" creteria
 
-  Scenario: Search git under specific channel
+  Scenario: Search gif under specific channel
     When I search by "@snl show"
     Then only "Saturday Night Live" gifs should be listed
     And "show" should be specified as keyword

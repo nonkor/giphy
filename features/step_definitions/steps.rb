@@ -1,5 +1,5 @@
 Given('I am on giphy site') do
-  $browser.goto 'giphy.com'
+  Base.browser.goto 'giphy.com'
   @page = HomePage.new
 end
 
@@ -40,8 +40,8 @@ Then('I should see message - no gifs found for {string}') do  |keyword|
   expect(@page.body).to include "No GIFs found for #{keyword}"
 end
 
-Then('the data should be sorted by {string} creteria') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then('the data should be sorted by {string} creteria') do |creteria|
+  expect(@page.sorted_by).to eq creteria.downcase
 end
 
 When('only {string} gifs should be listed') do |channel|
