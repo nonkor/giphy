@@ -1,11 +1,13 @@
-class ResultsPage < Page
+class ResultsPage
+  include BasicPage
+
   div :gif_tumbler, text: 'GIFs'
-  div :content, class: 'giphy-grid' #/^GridWithTV/
+  div :content, class: 'giphy-grid'
   imgs :gifs, class: 'giphy-gif-img'
   span :results, class: /^NumberDisplay/
   h2 :channels_count
 
-  # I had to use this poor locator because there is no other way to identify selected sorting type
+  # I had to use this awful locator because there is no other way to identify selected sorting type
   a :sorted_by, class: '_2rO4v1KuRJjfee1giAZGJE'
 
   def has_gifs?

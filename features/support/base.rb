@@ -18,5 +18,11 @@ module Base
       browser.screenshot.save path
       path
     end
+
+    def save_dom
+      File.open("#{Base::REPORT_DIR}/pagedom#{timestamp}.html", 'w') { |io|
+        io.write(Base.browser.body.html)
+      }
+    end
   end
 end

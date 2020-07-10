@@ -1,8 +1,3 @@
-Given('I am on giphy site') do
-  Base.browser.goto 'giphy.com'
-  @page = HomePage.new
-end
-
 When('I specify {string} as keyword') do |keyword|
   @page.fill_in(keyword)
 end

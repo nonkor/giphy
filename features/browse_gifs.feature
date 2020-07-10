@@ -1,8 +1,8 @@
-Feature: Observing available gifs
+Feature: Browse available gifs
   In order to have a better way to express themself chatting
   Or just have fun observing all available options from giphy
   As a customer
-  I should be able to search gif file by a tag or browse gifs through categories and upload dates
+  I should be able to search gif file by a tag or browse gifs grouped by categories and upload dates
 
   Background:
     Given I am on giphy site
