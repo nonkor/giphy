@@ -2,20 +2,40 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2
 
-jobs:
-  build:
+executors:
+  ruby-executor:
     docker:
       - image: circleci/ruby:2.6.3-stretch-browsers
-    executor: ruby/default
+
+commands:
+  install:
+    description: "install ruby gems"
     steps:
       - checkout
-      - run:
-          name: bundler install
-          command: gem install bundler
-      - ruby/bundle-install
-      - run:
-          name: cucumber run
-          command: bundle exec cucumber
+      - run: gem install bundler
+      - run: bundle install
+
+jobs:
+  cucumber:
+    executor: ruby-executor
+    steps:
+      - install
+      - run: bundle exec cucumber
       - store_artifacts:
           path: results
           prefix: tests
+  rspec:
+    executor: ruby-executor
+    steps:
+      - install
+      - run: bundle exec rspec
+
+workflows:
+  version: 2
+  ui_and_api_tests:
+    jobs:
+      - cucumber
+      - rspec
+
+
+
