@@ -34,7 +34,7 @@ class HomePage
   def fill_channel_and_keyword(keyword)
     channel, tag = keyword.split
     self.keyword = channel + ' '
-    searchbar_div.wait_until { |e| e.text.empty? }
+    searchbar_div.wait_while { |e| e.text.empty? }
     keyword_text_field.send_keys tag, :enter
   end
 end

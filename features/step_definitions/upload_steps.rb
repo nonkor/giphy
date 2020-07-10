@@ -25,6 +25,10 @@ When('I upload a gif by url') do
   @page = GifPage.new
 end
 
+When('I removes all my gifs') do
+  @page.remove_all_gifs
+end
+
 Then('I should be informed about a need to authenticate') do
   expect(@page.notice).to eq "You've gotta log in to upload to GIPHY!"
 end
@@ -36,4 +40,8 @@ end
 Then('desired tag should be specified') do
   # TODO: test tag validation
   pending
+end
+
+Then('my account should be empty') do
+  expect(@page.content).to be_empty
 end

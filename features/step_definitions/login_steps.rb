@@ -11,6 +11,7 @@ Given('I am logged in as {string}') do |user|
   Base.browser.goto 'giphy.com/login'
   @page = LoginPage.new
   step %(I login as "#{user}")
+  @page = ChannelPage.new
 end
 
 When('I navigate to the login page') do

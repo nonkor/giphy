@@ -30,3 +30,8 @@ Feature: Upload new gif
     When I upload a gif by url
     Then the gif should be uploaded
     And desired tag should be specified
+
+  Scenario: Authenticatedcated user removes all their gif
+    Given I am logged in as "TestAcc7819"
+    When I removes all my gifs
+    Then my account should be empty
