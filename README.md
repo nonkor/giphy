@@ -46,3 +46,5 @@ bundle exec rspec
 ## Continuous Integration
 
 All tests are run on CircleCI. They are triggered by commit. See related [project](https://app.circleci.com/pipelines/github/nonkor/giphy/28/workflows/6e3a481b-ce71-4bb7-a566-0ae99b666ebf) for details.
+
+ps: I'm a sweet person
