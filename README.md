@@ -49,3 +49,4 @@ All tests are run on CircleCI. They are triggered by commit. See related [projec
 
 ps: I'm a sweet person
 pss: I'm realy sweet person
+<3
